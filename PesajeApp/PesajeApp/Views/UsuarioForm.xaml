@@ -1,0 +1,108 @@
+﻿<Window x:Class="PesajeApp.Views.UsuarioForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nuevo usuario"
+        Height="550"
+        Width="500"
+        Icon="../Assets/logo.ico"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="30">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Nuevo usuario"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+        <TextBlock Grid.Row="1"
+                   Text="Nombre"
+                   Margin="0,0,0,5"/>
+
+        <TextBox Grid.Row="2"
+                 x:Name="NombreTextBox"
+                 Height="30"
+                 Margin="0,0,0,15"/>
+
+        <TextBlock Grid.Row="3"
+                   Text="Clave"
+                   Margin="0,0,0,5"/>
+
+        <PasswordBox Grid.Row="4"
+                     x:Name="ClavePasswordBox"
+                     Height="30"
+                     Margin="0,0,0,15"/>
+
+        <TextBlock Grid.Row="5"
+                   Text="Sede"
+                   Margin="0,0,0,5"/>
+
+        <ComboBox Grid.Row="6"
+                  x:Name="SedeComboBox"
+                  Height="30"
+                  DisplayMemberPath="Nombre"
+                  SelectedValuePath="Id"
+                  Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="7">
+
+            <TextBlock Text="Rol"
+                       Margin="0,0,0,5"/>
+
+            <ComboBox x:Name="RolComboBox"
+                      Height="30"
+                      Margin="0,0,0,15">
+
+                <ComboBoxItem Content="Administrador"/>
+                <ComboBoxItem Content="Usuario"/>
+
+            </ComboBox>
+
+            <TextBlock Text="Turno"
+                       Margin="0,0,0,5"/>
+
+            <ComboBox x:Name="TurnoComboBox"
+                      Height="30">
+
+                <ComboBoxItem Content="Mañana"/>
+                <ComboBoxItem Content="Tarde"/>
+                <ComboBoxItem Content="Noche"/>
+
+            </ComboBox>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="8"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+
+            <Button Content="Cancelar"
+                    Width="100"
+                    Height="35"
+                    Margin="0,0,10,0"
+                    Click="Cancelar_Click"/>
+
+            <Button Content="Guardar"
+                    Width="100"
+                    Height="35"
+                    Click="Guardar_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>
