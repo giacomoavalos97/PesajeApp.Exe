@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net10.0-windows</TargetFramework>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<SelfContained>true</SelfContained>
+	<Nullable>enable</Nullable>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<UseWPF>true</UseWPF>
+	<ApplicationIcon>Assets\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Assets\logo.ico" />
+    <None Remove="Reports\Pesaje.frx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json" Condition="Exists('appsettings.json')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.example.json" Condition="!Exists('appsettings.json')">
+      <TargetPath>appsettings.json</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\Pesaje.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="bblanchon.PDFium.Win32" Version="156.0.8066" />
+    <PackageReference Include="FastReport.OpenSource" Version="2026.2.8" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2026.2.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.11" />
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="PdfiumPrinter" Version="1.4.1" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\logo.ico" />
+	<EmbeddedResource Include="Assets\public-key.pem" />
+  </ItemGroup>
+
+<Target Name="CopyPdfiumToRuntimeFolder" AfterTargets="Build">
+	<MakeDir Directories="$(OutputPath)runtimes\win-x64\native" />
+	<Copy SourceFiles="$(OutputPath)pdfium.dll" DestinationFolder="$(OutputPath)runtimes\win-x64\native" Condition="Exists('$(OutputPath)pdfium.dll')" />
+</Target>
+
+<Target Name="CopyPdfiumToPublishFolder" AfterTargets="Publish">
+	<MakeDir Directories="$(PublishDir)runtimes\win-x64\native" />
+	<Copy SourceFiles="$(PublishDir)pdfium.dll" DestinationFolder="$(PublishDir)runtimes\win-x64\native" Condition="Exists('$(PublishDir)pdfium.dll')" />
+</Target>
+
+</Project>

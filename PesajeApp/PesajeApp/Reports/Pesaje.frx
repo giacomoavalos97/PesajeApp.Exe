@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/25/2026 05:41:32" ReportInfo.Modified="10/02/2026 12:11:39" ReportInfo.CreatorVersion="2026.2.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Pesaje" ReferenceName="Pesaje" DataType="System.Int32" Enabled="true">
+      <Column Name="Id" DataType="System.Int32"/>
+      <Column Name="ProductoCodigo" DataType="System.String"/>
+      <Column Name="ProductoDescripcion" DataType="System.String"/>
+      <Column Name="Cantidad" DataType="System.Int32"/>
+      <Column Name="Peso" DataType="System.Decimal"/>
+      <Column Name="PesoTara" DataType="System.Decimal"/>
+      <Column Name="PesoNeto" DataType="System.Decimal"/>
+      <Column Name="Precio" DataType="System.Decimal"/>
+      <Column Name="Importe" DataType="System.Decimal"/>
+      <Column Name="Lote" DataType="System.String"/>
+      <Column Name="CodAlt" DataType="System.String"/>
+      <Column Name="OP" DataType="System.String"/>
+      <Column Name="Kanban" DataType="System.String"/>
+      <Column Name="Turno" DataType="System.String"/>
+      <Column Name="Usuario" DataType="System.String"/>
+      <Column Name="FechaLocal" DataType="System.Int32"/>
+      <Column Name="MostrarPrecio" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarLote" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarCodigoBarras" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarFechaVencimiento" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarFechaPeriodo" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarPesoNeto" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="MostrarPesoTara" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="EmpresaNombre" DataType="System.String"/>
+      <Column Name="EmpresaTitulo2" DataType="System.String"/>
+      <Column Name="EmpresaTitulo3" DataType="System.String"/>
+      <Column Name="SedeNombre" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="100" PaperHeight="50" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="378" Height="56.7">
+      <TextObject Name="Text15" Width="378" Height="18.9" Text="[Pesaje.EmpresaNombre]" HorzAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text16" Top="18.9" Width="378" Height="18.9" Text="[Pesaje.EmpresaTitulo2]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text17" Top="37.8" Width="378" Height="18.9" Text="[Pesaje.EmpresaTitulo3]" HorzAlign="Center" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="58.15" Width="378" Height="103.95" DataSource="Pesaje">
+      <TextObject Name="Text1" Left="28.35" Width="47.25" Height="18.9" Text="Op:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text18" Left="75.6" Width="66.15" Height="18.9" Text="[Pesaje.OP]" Font="Arial, 7pt"/>
+      <TextObject Name="Text19" Left="18.9" Top="18.9" Width="56.7" Height="18.9" Text="Codigo:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text20" Left="75.6" Top="18.9" Width="66.15" Height="18.9" Text="[Pesaje.ProductoCodigo]" Font="Arial, 7pt"/>
+      <TextObject Name="Text21" Left="75.6" Top="37.8" Width="292.95" Height="28.35" Text="[Pesaje.ProductoDescripcion]" Font="Arial, 7pt"/>
+      <TextObject Name="Text22" Left="9.45" Top="37.8" Width="66.15" Height="18.9" Text="Producto:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text23" Left="75.6" Top="66.15" Width="94.5" Height="18.9" Text="[Pesaje.Cantidad]" Font="Arial, 7pt"/>
+      <TextObject Name="Text24" Left="9.45" Top="66.15" Width="66.15" Height="18.9" Text="Cantidad:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text25" Left="9.45" Top="85.05" Width="66.15" Height="18.9" Text="Fec. Creac:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text26" Left="75.6" Top="85.05" Width="103.95" Height="18.9" Text="[Pesaje.FechaLocal]" Font="Arial, 7pt"/>
+      <TextObject Name="Text27" Left="207.9" Width="66.15" Height="18.9" Text="Kanban:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text28" Left="274.05" Width="94.5" Height="18.9" Text="[Pesaje.Kanban]" Font="Arial, 7pt"/>
+      <TextObject Name="Text29" Left="207.9" Top="18.9" Width="66.15" Height="18.9" Text="Cod. Alt:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text30" Left="274.05" Top="18.9" Width="94.5" Height="18.9" Text="[Pesaje.CodAlt]" Font="Arial, 7pt"/>
+      <TextObject Name="Text31" Left="207.9" Top="66.15" Width="66.15" Height="18.9" Text="Peso:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text32" Left="207.9" Top="85.05" Width="66.15" Height="18.9" Text="Turno:" HorzAlign="Right" Font="Arial, 7pt"/>
+      <TextObject Name="Text33" Left="274.05" Top="85.05" Width="94.5" Height="18.9" Text="[Pesaje.Turno]" Font="Arial, 7pt"/>
+      <TextObject Name="Text34" Left="274.05" Top="66.15" Width="66.15" Height="18.9" Text="[Pesaje.Peso]" HorzAlign="Right" WordWrap="false" Font="Arial, 7pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text35" Left="340.2" Top="66.15" Width="28.35" Height="18.9" Text="KG" Font="Arial, 7pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>
