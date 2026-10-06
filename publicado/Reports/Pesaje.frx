@@ -17,7 +17,7 @@
       <Column Name="Kanban" DataType="System.String"/>
       <Column Name="Turno" DataType="System.String"/>
       <Column Name="Usuario" DataType="System.String"/>
-      <Column Name="FechaLocal" DataType="System.Int32"/>
+      <Column Name="FechaLocal" DataType="System.DateTime"/>
       <Column Name="MostrarPrecio" DataType="System.Boolean" BindableControl="CheckBox"/>
       <Column Name="MostrarLote" DataType="System.Boolean" BindableControl="CheckBox"/>
       <Column Name="MostrarCodigoBarras" DataType="System.Boolean" BindableControl="CheckBox"/>
@@ -47,7 +47,7 @@
       <TextObject Name="Text23" Left="75.6" Top="66.15" Width="94.5" Height="18.9" Text="[Pesaje.Cantidad]" Font="Arial, 7pt"/>
       <TextObject Name="Text24" Left="9.45" Top="66.15" Width="66.15" Height="18.9" Text="Cantidad:" HorzAlign="Right" Font="Arial, 7pt"/>
       <TextObject Name="Text25" Left="9.45" Top="85.05" Width="66.15" Height="18.9" Text="Fec. Creac:" HorzAlign="Right" Font="Arial, 7pt"/>
-      <TextObject Name="Text26" Left="75.6" Top="85.05" Width="103.95" Height="18.9" Text="[Pesaje.FechaLocal]" Font="Arial, 7pt"/>
+      <TextObject Name="Text26" Left="75.6" Top="85.05" Width="103.95" Height="18.9" Text="[Pesaje.FechaLocal]" Format="Date" Format.Format="dd/MM/yyyy HH:mm" Font="Arial, 7pt"/>
       <TextObject Name="Text27" Left="207.9" Width="66.15" Height="18.9" Text="Kanban:" HorzAlign="Right" Font="Arial, 7pt"/>
       <TextObject Name="Text28" Left="274.05" Width="94.5" Height="18.9" Text="[Pesaje.Kanban]" Font="Arial, 7pt"/>
       <TextObject Name="Text29" Left="207.9" Top="18.9" Width="66.15" Height="18.9" Text="Cod. Alt:" HorzAlign="Right" Font="Arial, 7pt"/>
